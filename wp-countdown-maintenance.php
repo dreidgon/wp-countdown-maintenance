@@ -1,16 +1,15 @@
 <?php
 
 /*
-Plugin Name: Simple Maintenance Page
+Plugin Name: WP Countdown Maintenance
 Plugin URI: http://wordpress.org/plugins/dr-slider
-Description: Dummy description 
+Description: Lightweight maintenance mode plugin for WordPress with countdown and logo support.  
 Version: 1.0
 Requires at least: 5.6
-Author: Your name
-Author URI: http://www.google.com
+Author: Dreidgon
 Licence: GPL v2 or later
 Licence URI: http://www.google.com
-Text Domain: simple-maintenance-page
+Text Domain: wp-countdown-maintenance
 Domain Path: /languages
 */
 
