@@ -51,15 +51,15 @@ You are free to use, modify, and distribute it as you wish.
 
 ---
 
-## ⚠️ Disclaimer
+⚠️ **Disclaimer**
 
-This plugin has been tested on local and development environments only.
+This plugin has **only been tested in local and development environments**.
 
-Please **backup your website and database** before using it on a live site.
+You **must test it thoroughly on a local or staging site first** to ensure it works correctly, meets your needs, and is secure before using it on a live website.
 
-The author is not responsible for any issues, data loss, or downtime that may occur.
+**Always backup your entire website and database** before activating this plugin on a production environment.
 
----
+The author **is not responsible** for any issues, data loss, downtime, or security problems that may arise from using this plugin.
 
 ## 🧪 Tested Environment
 
