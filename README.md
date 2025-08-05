@@ -11,7 +11,6 @@ A lightweight and easy-to-use WordPress maintenance mode plugin. Display a custo
 - Upload a custom logo
 - Set a target date/time for a countdown (optional)
 - Fully responsive and mobile-friendly
-- Works with any theme
 
 ---
 
@@ -37,10 +36,10 @@ When **maintenance mode is enabled**, all non-logged-in users (visitors) will se
 
 ## 📁 Folder Structure
 
-wp-countdown-maintenance/
-│
-├── wp-countdown-maintenance.php ← main plugin file
-├── templates/
+wp-countdown-maintenance/  
+│  
+├── wp-countdown-maintenance.php ← main plugin file  
+├── templates/  
 │ └── coming-soon-template.php ← HTML template for front-end
 
 ---
@@ -49,6 +48,24 @@ wp-countdown-maintenance/
 
 This plugin is licensed under the [GPL v2 or later](https://www.gnu.org/licenses/gpl-2.0.html).  
 You are free to use, modify, and distribute it as you wish.
+
+---
+
+## ⚠️ Disclaimer
+
+This plugin has been tested on local and development environments only.
+
+Please **backup your website and database** before using it on a live site.
+
+The author is not responsible for any issues, data loss, or downtime that may occur.
+
+---
+
+## 🧪 Tested Environment
+
+- **PHP:** 8.3.14
+- **MySQL:** 9.1.0
+- **WordPress:** Tested with WordPress 6.8.2
 
 ---
 

@@ -2,13 +2,12 @@
 
 /*
 Plugin Name: WP Countdown Maintenance
-Plugin URI: http://wordpress.org/plugins/dr-slider
 Description: Lightweight maintenance mode plugin for WordPress with countdown and logo support.  
 Version: 1.0
-Requires at least: 5.6
+Requires at least: 6.8.2
 Author: Dreidgon
 Licence: GPL v2 or later
-Licence URI: http://www.google.com
+Licence URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: wp-countdown-maintenance
 Domain Path: /languages
 */
@@ -69,7 +68,7 @@ function simple_maintenance_page_settings(){
     register_setting('smp_settings_group', 'smp_maintenante_text');
     */
     //register array format
-    register_setting('smp_settings_group', 'smp_settings');
+    register_setting('smp_settings_group', 'smp_settings','smp_settings_sanitize');
 
     add_settings_section(
         'smp_section_main',   // Section ID
@@ -114,6 +113,30 @@ function simple_maintenance_page_settings(){
 }
 
 add_action('admin_init','simple_maintenance_page_settings');
+
+function smp_settings_sanitize($input){    
+    $output = array();
+
+    // Sanitize enabled (checkbox)
+    $output['enabled'] = isset($input['enabled']) && $input['enabled'] ? 1 : 0;
+
+    // Sanitize maintenance text — allow limited HTML or strip all tags
+    $output['maintenance_text'] = wp_kses_post($input['maintenance_text']);
+
+    // Sanitize logo URL
+    $output['logo'] = esc_url_raw($input['logo']);
+
+    // Sanitize countdown date/time — validate datetime-local format roughly
+    if (isset($input['smp_countdown']) && preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $input['smp_countdown'])) {
+        $output['smp_countdown'] = $input['smp_countdown'];
+    } else {
+        $output['smp_countdown'] = '';
+    }
+
+    return $output;;
+}
+
+
 
 function smp_countdown_callback() {
     $value = get_option('smp_settings');
@@ -180,8 +203,10 @@ add_action('admin_enqueue_scripts', 'smp_enqueue_media_uploader');
 
 //https://developer.wordpress.org/reference/hooks/template_redirect/
 function smp_redirect_to_coming_soon(){
+    $options = get_option('smp_settings');
+    $enabled = isset($options['enabled']) ? $options['enabled'] : 0;
     //https://developer.wordpress.org/reference/functions/current_user_can/
-    if (! current_user_can('manage_options') && get_option('smp_enabled') == '1') {
+    if (! current_user_can('manage_options') && $enabled == '1') {
         //If current user is not admin
         status_header(503);
         include plugin_dir_path(__FILE__) . 'templates/coming-soon-template.php';
