@@ -1,5 +1,6 @@
 # WP Countdown Maintenance
 
+🚧 **This plugin is currently in active development. Use at your own risk in production environments.** 🚧
 A lightweight and easy-to-use WordPress maintenance mode plugin. Display a custom maintenance message, logo, and countdown timer while your site is under construction or undergoing updates.
 
 ---
