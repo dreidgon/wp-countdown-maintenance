@@ -15,6 +15,10 @@ A lightweight and easy-to-use WordPress maintenance mode plugin. Display a custo
 
 ---
 
+## 📸 Screenshots
+![Example of shortcode output](https://github.com/dreidjo/wp-simple-shortcode/blob/main/screenshot.PNG?raw=true)
+
+
 ## ⚙️ Installation
 
 1. Upload the plugin files to the `/wp-content/plugins/wp-countdown-maintenance` directory, or install via the WordPress Plugins screen.
