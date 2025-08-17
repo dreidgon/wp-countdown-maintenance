@@ -16,7 +16,7 @@ A lightweight and easy-to-use WordPress maintenance mode plugin. Display a custo
 ---
 
 ## 📸 Screenshots
-![Example of shortcode output](https://github.com/dreidjo/wp-simple-shortcode/blob/main/screenshot.PNG?raw=true)
+![Example of wp countdown plugin](https://github.com/dreidjo/wp-countdown-maintenance/blob/main/screenshot.png?raw=true)
 
 
 ## ⚙️ Installation
